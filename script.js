@@ -63,3 +63,5 @@ uniqueCurrentsies.forEach(function (value, _, set) {
 currentsies.forEach(function (value, key, map) {
   console.log(`${key} : ${value}`);
 });
+
+///map(), filter() and reduce()
