@@ -38,17 +38,31 @@ const verifyCats = function (catsJane, catsJulia) {
 verifyCats(catsJane, catsJulia);
 
 const catAges = [7, 3, 2, 4, 1, 15, 8, 1, 9, 2];
-const getAverageHumanAge = function (ageCatAll) {
-  const ageHuman = ageCatAll.map((age) => (age <= 2 ? age * 10 : age * 7));
-  const filterHumanAge = ageHuman.filter((age) => age >= 18);
-  const reduceHumanAge = filterHumanAge.reduce(
-    (acc, item, index, fha) =>
-      index == Object.keys(fha).length - 1
-        ? (acc + item) / (index + 1)
-        : acc + item,
-    0
-  );
-  console.log(reduceHumanAge);
+// const getAverageHumanAge = function (ageCatAll) {
+//   const ageHuman = ageCatAll.map((age) => (age <= 2 ? age * 10 : age * 7));
+//   const filterHumanAge = ageHuman.filter((age) => age >= 18);
+//   const reduceHumanAge = filterHumanAge.reduce(
+//     (acc, item, index, fha) =>
+//       index == Object.keys(fha).length - 1
+//         ? (acc + item) / (index + 1)
+//         : acc + item,
+//     0
+//   );
+//   console.log(reduceHumanAge);
+// };
+
+const getAverageHumanAge = (ageCatAll) => {
+  const ageHuman = ageCatAll
+    .map((age) => (age <= 2 ? age * 10 : age * 7))
+    .filter((age) => age >= 18)
+    .reduce(
+      (acc, item, index, fha) =>
+        index == Object.keys(fha).length - 1
+          ? (acc + item) / (index + 1)
+          : acc + item,
+      0
+    );
+  console.log(ageHuman);
 };
 
 getAverageHumanAge(catAges);
