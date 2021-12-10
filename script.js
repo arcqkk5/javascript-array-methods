@@ -65,3 +65,4 @@ currentsies.forEach(function (value, key, map) {
 });
 
 ///map(), filter() and reduce()
+//find()
